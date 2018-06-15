@@ -9,12 +9,12 @@ namespace _2048
 {
     class Square
     {
-        Point pos;
+        public Point pos;
         Color color;
         int value;
-        // Site kvadratcinja ke se so 50px strana
+        // Site kvadratcinja ke se so 100px strana
         // ova testiram dali mozhe da se kommitne
-        public static int side = 50;
+        public static int side = 100;
         public Square(Point pos, int value, Color color)
         {
             this.pos = pos;
@@ -23,7 +23,12 @@ namespace _2048
         }
         public void Draw(Graphics g)
         {
-            g.FillRectangle;
+            Brush b = new SolidBrush(color);
+            Brush fb = new SolidBrush(Color.White);
+            g.FillRectangle(b, pos.X, pos.Y, side, side);
+            Font font = new Font("Arial", 20);
+            g.DrawString(string.Format("{0}", value), font, fb, pos.X + 35, pos.Y +35);
+            b.Dispose();
         }
     }
 }
