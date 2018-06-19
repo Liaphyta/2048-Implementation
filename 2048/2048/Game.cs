@@ -17,12 +17,9 @@ namespace _2048
         {
             mat = new int [4, 4];
             squares = new List<Square>();
-            //  addRandom();//igrata pocnuva so dve 2ki na slucajni pozicii vo gridot
-            // addRandom();
-            mat[0, 0] = 1;
-            mat[2, 3] = 4;
-           // mat[3, 2] = 3;
-            mat[3, 3] = 4;
+            addRandom();//igrata pocnuva so dve 2ki na slucajni pozicii vo gridot
+            addRandom();
+         
             
            
 
@@ -121,7 +118,7 @@ namespace _2048
                     else
                         break;
                 }
-            // addRandom();
+           
 
         }
         public int[] getRow(int rowNum)
@@ -146,6 +143,7 @@ namespace _2048
                     else
                         break;
                 }
+           
 
         }
         public Boolean getNextNumber(int[] arr,int start, out int next)

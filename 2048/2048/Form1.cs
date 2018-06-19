@@ -52,12 +52,14 @@ namespace _2048
                 game.moveUp();
                 game.addVertical();
                 game.moveUp();
+                game.addRandom();
             }
             else if (e.KeyCode == Keys.Left)
             {
                 game.moveLeft();
                 game.addHorizontal();
                 game.moveLeft();
+                game.addRandom();
             }
            
             Invalidate(true);
