@@ -29,6 +29,7 @@ namespace _2048
             Font font = new Font("Arial", 20);
             g.DrawString(string.Format("{0}", value), font, fb, pos.X + 35, pos.Y +35);
             b.Dispose();
+            fb.Dispose();
         }
     }
 }

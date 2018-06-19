@@ -20,6 +20,8 @@ namespace _2048
             DoubleBuffered = true;
             game = new Game();
            
+            
+
 
         }
 
@@ -36,7 +38,21 @@ namespace _2048
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
+                
            
+            Invalidate(true);
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Up)
+            {
+                game.moveUp();
+                game.addHorizontal();
+                game.moveUp();
+            }
            
             Invalidate(true);
         }
