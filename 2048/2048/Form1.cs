@@ -50,8 +50,14 @@ namespace _2048
             if (e.KeyCode == Keys.Up)
             {
                 game.moveUp();
-                game.addHorizontal();
+                game.addVertical();
                 game.moveUp();
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                game.moveLeft();
+                game.addHorizontal();
+                game.moveLeft();
             }
            
             Invalidate(true);

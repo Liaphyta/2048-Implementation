@@ -20,9 +20,10 @@ namespace _2048
             //  addRandom();//igrata pocnuva so dve 2ki na slucajni pozicii vo gridot
             // addRandom();
             mat[0, 0] = 1;
-            mat[3, 1] = 4;
+            mat[2, 3] = 4;
            // mat[3, 2] = 3;
             mat[3, 3] = 4;
+            
            
 
         }
@@ -75,7 +76,7 @@ namespace _2048
                 ret[j] = mat[i,j];
             return ret;
         }
-        public void addHorizontal()
+        public void addVertical()
         {
             for(int i=0;i<4;i++)
                 for(int j = 0; j < 3; j++)
@@ -88,6 +89,22 @@ namespace _2048
                         j++;
                     }
                 }
+        }
+        public void addHorizontal()
+        {
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 3; j++)
+                {
+                    if (mat[j, i] == 0)
+                        continue;
+                    if (mat[j, i] == mat[j + 1, i])
+                    {
+                        mat[j, i] += mat[j+1, i];
+                        mat[j + 1, i] = 0;
+                        j++;
+                    }
+                }
+
         }
         public void moveUp()
         {
@@ -105,6 +122,30 @@ namespace _2048
                         break;
                 }
             // addRandom();
+
+        }
+        public int[] getRow(int rowNum)
+        {
+            int[] ret = new int[4];
+            for (int i = 0; i < 4; i++)
+                ret[i] = mat[i, rowNum];
+            return ret;
+        }
+        public void moveLeft()
+        {
+            for(int j=0;j<4;j++)
+                for(int i = 0; i < 4; i++)
+                {
+                    if (!anyRemaining(getRow(j), i))
+                        break;
+                    if (mat[i, j] != 0)
+                        continue;
+                    int toSwap = 0;
+                    if (getNextNumber(getRow(j), i, out toSwap))
+                        swap(i, j, toSwap, j);
+                    else
+                        break;
+                }
 
         }
         public Boolean getNextNumber(int[] arr,int start, out int next)
