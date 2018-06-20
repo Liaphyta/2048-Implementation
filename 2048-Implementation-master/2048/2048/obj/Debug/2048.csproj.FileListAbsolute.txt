@@ -41,3 +41,6 @@ C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2
 C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.LeaderBoard.resources
 C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.GameOver.resources
 C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.Instructions.resources
+C:\Users\Gogo\Desktop\Fakultet\VP\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.GameOver.resources
+C:\Users\Gogo\Desktop\Fakultet\VP\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.Instructions.resources
+C:\Users\Gogo\Desktop\Fakultet\VP\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.LeaderBoard.resources

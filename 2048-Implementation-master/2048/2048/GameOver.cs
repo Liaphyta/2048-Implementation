@@ -19,14 +19,17 @@ namespace _2048
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult = DialogResult.Cancel;
+            // Application.Exit();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            Form1 form = new Form1();
-            form.ShowDialog();
+            DialogResult = DialogResult.OK;
+            this.Close();
+           // Form1 form = new Form1();
+           // form.ShowDialog();
             
         }
     }

@@ -95,7 +95,9 @@ namespace _2048
             {
                 highscores.Add(game.score);
                 GameOver gameover = new GameOver();
-                gameover.ShowDialog();
+               if( gameover.ShowDialog() == DialogResult.OK)
+                    game = new Game();
+                Invalidate(true);
                
                 
                 

@@ -65,7 +65,7 @@ namespace _2048
         public Boolean isGameOver()
         {
             if (getAvaliablePlaces().Count != 0)
-                return false;
+                return true;
             for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 3; j++)
                 {
