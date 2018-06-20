@@ -28,3 +28,16 @@ C:\Users\Gogo\Desktop\Fakultet\VP\2048-Implementation\2048-Implementation-master
 C:\Users\Gogo\Desktop\Fakultet\VP\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\2048.csproj.CoreCompileInputs.cache
 C:\Users\Gogo\Desktop\Fakultet\VP\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\2048.exe
 C:\Users\Gogo\Desktop\Fakultet\VP\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\2048.pdb
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\bin\Debug\2048.exe.config
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\bin\Debug\2048.exe
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\bin\Debug\2048.pdb
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\2048.csprojResolveAssemblyReference.cache
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.Form1.resources
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.Properties.Resources.resources
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\2048.csproj.GenerateResource.cache
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\2048.csproj.CoreCompileInputs.cache
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\2048.exe
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\2048.pdb
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.LeaderBoard.resources
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.GameOver.resources
+C:\Users\Alek\Desktop\2048\2048-Implementation\2048-Implementation-master\2048\2048\obj\Debug\_2048.Instructions.resources
