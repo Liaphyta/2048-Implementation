@@ -92,7 +92,15 @@ namespace _2048
             Invalidate(true);
             // OVA MOZE DA SE NAPRAI POUBAVO NESO DA PRIKAZUVA KOA KE IZGUBI IGRACOT
             if (game.isGameOver())
-                MessageBox.Show("GAME OVER");
+            {
+                highscores.Add(game.score);
+                GameOver gameover = new GameOver();
+                gameover.ShowDialog();
+               
+                
+                
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -104,6 +112,7 @@ namespace _2048
 
         private void label2_Click(object sender, EventArgs e)
         {
+            highscores.Add(game.score);
             //game = new Game();
         }
         private void updateScores()
@@ -120,7 +129,7 @@ namespace _2048
         }
         private void label2_MouseClick(object sender, MouseEventArgs e)
         {
-            highscores.Add(game.score);
+            //highscores.Add(game.score);
             updateScores();
             
             game = new Game();
@@ -130,6 +139,21 @@ namespace _2048
         private void label3_MouseClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+           
+            LeaderBoard leader = new LeaderBoard();
+            leader.getHighScores(highscores);
+            leader.Show();
+            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Instructions ins = new Instructions();
+            ins.ShowDialog();
         }
     }
 }
