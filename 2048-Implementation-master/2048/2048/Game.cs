@@ -13,13 +13,14 @@ namespace _2048
         //igra
        public int[,] mat;
         List<Square> squares;
+       public int score;
         public Game()
         {
             mat = new int [4, 4];
             squares = new List<Square>();
             addRandom();//igrata pocnuva so dve 2ki na slucajni pozicii vo gridot
             addRandom();
-         
+            score = 0;
             
            
 
@@ -46,6 +47,8 @@ namespace _2048
         {
             Random rand = new Random();
             List<int> pick = getAvaliablePlaces();
+            if (pick.Count == 0)
+                return;
             int index = rand.Next(pick.Count);
             int i = pick.ElementAt(index) / 4;
             int j = pick.ElementAt(index) % 4;
@@ -59,9 +62,39 @@ namespace _2048
                         ret.Add(i * 4 + j);
             return ret;
         }
+        public Boolean isGameOver()
+        {
+            if (getAvaliablePlaces().Count != 0)
+                return false;
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 3; j++)
+                {
+                   if (mat[i, j] == mat[i, j + 1])
+                    {
+                        return false;
+                    }
+                }
+            for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 3; j++)
+                {
+                   
+                    if (mat[j, i] == mat[j + 1, i])
+                    {
+                        return false;
+                    }
+                }
+            return true;
+        }
         public Boolean anyRemaining(int[] arr, int i)
         {
             for (int j = i + 1; j < arr.Length;j++)
+                if (arr[j] != 0)
+                    return true;
+            return false;
+        }
+        public Boolean anyRemainingB(int[] arr, int i)
+        {
+            for (int j = i - 1; j >= 0; j--)
                 if (arr[j] != 0)
                     return true;
             return false;
@@ -82,6 +115,7 @@ namespace _2048
                         continue;
                     if (mat[i, j] == mat[i, j + 1]) {
                         mat[i, j] += mat[i, j + 1];
+                        score += mat[i, j];
                          mat[i, j + 1] = 0;
                         j++;
                     }
@@ -97,6 +131,7 @@ namespace _2048
                     if (mat[j, i] == mat[j + 1, i])
                     {
                         mat[j, i] += mat[j+1, i];
+                        score += mat[j, i];
                         mat[j + 1, i] = 0;
                         j++;
                     }
@@ -120,6 +155,22 @@ namespace _2048
                 }
            
 
+        }
+        public void moveDown()
+        {
+            for (int i = 0; i < 4; i++)
+                for (int j = 3; j >= 0; j--)
+                {
+                    if (!anyRemainingB(getColumn(i), j))
+                        break;
+                    if (mat[i, j] != 0)
+                        continue;
+                    int toSwap = 0;
+                    if (getNextNumberB(getColumn(i), j, out toSwap))
+                        swap(i, j, i, toSwap);
+                    else
+                        break;
+                }
         }
         public int[] getRow(int rowNum)
         {
@@ -146,9 +197,37 @@ namespace _2048
            
 
         }
+        public void moveRight()
+        {
+            for (int j = 0; j < 4; j++)
+                for (int i = 3; i >= 0; i--)
+                {
+                    if (!anyRemainingB(getRow(j), i))
+                        break;
+                    if (mat[i, j] != 0)
+                        continue;
+                    int toSwap = 0;
+                    if (getNextNumberB(getRow(j), i, out toSwap))
+                        swap(i, j, toSwap, j);
+                    else
+                        break;
+                }
+
+        }
         public Boolean getNextNumber(int[] arr,int start, out int next)
         {
             for (int i = start + 1; i < arr.Length; i++)
+                if (arr[i] != 0)
+                {
+                    next = i;
+                    return true;
+                }
+            next = -1;
+            return false;
+        }
+        public Boolean getNextNumberB(int[] arr, int start, out int next)
+        {
+            for(int i=start-1;i>=0;i--)
                 if (arr[i] != 0)
                 {
                     next = i;

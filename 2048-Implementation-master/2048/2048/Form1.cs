@@ -14,7 +14,7 @@ namespace _2048
     {
         private Game game;
         private List<int> highscores;
-        int currentScore;
+        
 
         public Form1()
         {
@@ -23,7 +23,6 @@ namespace _2048
             game = new Game();
             //niza od skorovi i momentalen skor
             highscores = new List<int>();
-            currentScore = 0;
             updateScores();
 
         }
@@ -74,8 +73,26 @@ namespace _2048
                 game.moveLeft();
                 game.addRandom();
             }
+            else if (e.KeyCode == Keys.Down)
+            {
+                game.moveDown();
+                game.addVertical();
+                game.moveDown();
+                game.addRandom();
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                game.moveRight();
+                game.addHorizontal();
+                game.moveRight();
+                game.addRandom();
+            }
+           
             updateScores();
             Invalidate(true);
+            // OVA MOZE DA SE NAPRAI POUBAVO NESO DA PRIKAZUVA KOA KE IZGUBI IGRACOT
+            if (game.isGameOver())
+                MessageBox.Show("GAME OVER");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -91,7 +108,7 @@ namespace _2048
         }
         private void updateScores()
         {
-            currScore.Text = currentScore.ToString();
+            currScore.Text = game.score.ToString();
             if (highscores.Count == 0)
                 highScore.Text = 0.ToString();
             else
@@ -103,9 +120,9 @@ namespace _2048
         }
         private void label2_MouseClick(object sender, MouseEventArgs e)
         {
-            highscores.Add(currentScore);
+            highscores.Add(game.score);
             updateScores();
-            currentScore = 0;
+            
             game = new Game();
             Invalidate(true);
         }
